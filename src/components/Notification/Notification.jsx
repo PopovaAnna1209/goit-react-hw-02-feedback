@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Notification.module.css';
 
 export const Notification = ({ message }) => {
 	return (
