@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import './FeedbackOptions.module.css';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+  const optionsAll = Object.keys(options);
     return (
     <div>
-        {options.map(option => (
-        <button key={shortid.generate()} type="button" name={option} onClick={onLeaveFeedback}>
+        {optionsAll.map(option => (
+        <button key={shortid.generate()} type="button" name={option} onClick={() => onLeaveFeedback(option)}>
             {option}
         </button>
         ))}
@@ -17,6 +18,6 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   
   
   FeedbackOptions.propTypes = {
-    options: PropTypes.array,
+    options: PropTypes.object,
     onLeaveFeedback: PropTypes.func,
   };
